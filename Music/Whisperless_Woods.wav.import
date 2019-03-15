@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Whisperless_Woods.wav-7ddcb91409e669e59f547755fce521a6.sample"
+
+[deps]
+
+source_file="res://Music/Whisperless_Woods.wav"
+dest_files=[ "res://.import/Whisperless_Woods.wav-7ddcb91409e669e59f547755fce521a6.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/HiddenThicket.wav-09d9e4699f65b1a5edab6a97ac0871ba.sample"
+
+[deps]
+
+source_file="res://Music/HiddenThicket.wav"
+dest_files=[ "res://.import/HiddenThicket.wav-09d9e4699f65b1a5edab6a97ac0871ba.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0
