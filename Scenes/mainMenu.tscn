@@ -1,10 +1,148 @@
-[gd_scene format=2]
+[gd_scene load_steps=16 format=2]
+
+[ext_resource path="res://Scripts/mainMenuScript.gd" type="Script" id=1]
+[ext_resource path="res://Music/HiddenThicket.wav" type="AudioStream" id=2]
+[ext_resource path="res://Fonts/Ubuntu/Ubuntu-Medium.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Fonts/Orbitron-Black.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Music/Quack.ogg" type="AudioStream" id=5]
+[ext_resource path="res://Fonts/Ubuntu/Ubuntu-Regular.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://UI/Amrith2.png" type="Texture" id=7]
+[ext_resource path="res://UI/Amrith.png" type="Texture" id=8]
+
+[sub_resource type="DynamicFont" id=2]
+size = 36
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 81
+outline_size = 1
+outline_color = Color( 0.188235, 0.972549, 0.0509804, 1 )
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="Curve" id=4]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 1 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=5]
+curve = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+render_priority = 4
+trail_divisor = 2
+trail_size_modifier = SubResource( 5 )
+emission_shape = 1
+emission_sphere_radius = 106.26
+flag_disable_z = true
+spread = 125.69
+gravity = Vector3( 0, -3.66, 0 )
+angular_velocity = 10.28
+angular_velocity_random = 0.72
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 5.0
+scale_random = 1.0
+color = Color( 0.780392, 0.988235, 0.639216, 1 )
+hue_variation = 0.01
+
+[sub_resource type="DynamicFont" id=8]
+size = 28
+font_data = ExtResource( 6 )
+
+[sub_resource type="SpriteFrames" id=7]
+animations = [ {
+"frames": [ ExtResource( 7 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 3.0
+} ]
 
 [node name="mainMenu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 40.0
-margin_bottom = 40.0
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
 
+[node name="MenuTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 2 )
+volume_db = -12.029
+autoplay = true
+
+[node name="Button" type="Button" parent="."]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -111.5
+margin_top = -117.0
+margin_right = 111.5
+margin_bottom = -70.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_hover = Color( 0.807843, 0.941176, 0.819608, 1 )
+custom_colors/font_color_pressed = Color( 0.305882, 0.905882, 0.0784314, 1 )
+text = "[Start Game]"
+flat = true
+
+[node name="Label" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -413.0
+margin_top = -83.5
+margin_right = 413.0
+margin_bottom = 83.5
+custom_fonts/font = SubResource( 3 )
+text = "Concealed Blades
+"
+align = 1
+
+[node name="Particles2D" type="Particles2D" parent="Label"]
+position = Vector2( 421, 163.5 )
+amount = 116
+lifetime = 96.79
+speed_scale = 3.09
+randomness = 0.43
+fixed_fps = 60
+draw_order = 1
+process_material = SubResource( 6 )
+
+[node name="Quack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Haha" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -243.5
+margin_top = -16.5
+margin_right = 243.5
+margin_bottom = 16.5
+custom_fonts/font = SubResource( 8 )
+text = "It's April And You Just Got Fooled! ovo"
+align = 1
+
+[node name="Center Sprite" type="Control" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -512.0
+margin_top = -600.0
+margin_right = 512.0
+
+[node name="Amrith" type="AnimatedSprite" parent="Center Sprite"]
+position = Vector2( 520, 400 )
+scale = Vector2( 3, 3 )
+frames = SubResource( 7 )
+frame = 1
+playing = true
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
