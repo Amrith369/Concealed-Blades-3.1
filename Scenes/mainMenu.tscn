@@ -142,7 +142,6 @@ margin_right = 512.0
 position = Vector2( 520, 400 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 7 )
-frame = 1
 playing = true
 
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
