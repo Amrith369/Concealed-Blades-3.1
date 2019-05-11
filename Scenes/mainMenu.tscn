@@ -1,12 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Scripts/mainMenuScript.gd" type="Script" id=1]
 [ext_resource path="res://Music/Mill_Ruins.wav" type="AudioStream" id=2]
 [ext_resource path="res://Fonts/Ubuntu/Ubuntu-Medium.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://Fonts/Orbitron-Black.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Fonts/Ubuntu/Ubuntu-Regular.ttf" type="DynamicFontData" id=5]
-[ext_resource path="res://UI/Amrith2.png" type="Texture" id=6]
-[ext_resource path="res://UI/Amrith.png" type="Texture" id=7]
 
 [sub_resource type="DynamicFont" id=1]
 size = 36
@@ -49,7 +47,7 @@ font_data = ExtResource( 5 )
 
 [sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ ExtResource( 6 ), ExtResource( 7 ) ],
+"frames": [ null, null ],
 "loop": true,
 "name": "default",
 "speed": 3.0
@@ -142,5 +140,4 @@ position = Vector2( 520, 400 )
 scale = Vector2( 3, 3 )
 frames = SubResource( 7 )
 playing = true
-
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

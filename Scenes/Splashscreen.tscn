@@ -57,4 +57,3 @@ valign = 1
 [node name="anim" type="AnimationPlayer" parent="."]
 autoplay = "fade"
 anims/fade = SubResource( 2 )
-
